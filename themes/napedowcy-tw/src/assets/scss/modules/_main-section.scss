@@ -1,0 +1,116 @@
+.main-section {
+  border-bottom: 10px solid $mainDark;
+  padding: 20px 0;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  @mixin atSmall {
+    padding: 20px 20px;
+  }
+  @mixin atMedium {
+    padding: 40px 0;
+  }
+  @mixin atLarge {
+    padding: 60px 0;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    @mixin atMedium {
+      max-width: 1200px;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  &--border {
+    border-bottom: 2px solid rgba($mainRed, 0.5);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    @mixin atMedium {
+      border-bottom: 0;
+      padding: 0;
+    }
+  }
+  &__article {
+    width: 100%;
+    @mixin atLarge {
+      width: 48%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &-devices {
+      width: 100%;
+    }
+  }
+  &__title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    h2 {
+      border-bottom: 2px solid rgba($mainWhite, 0.3);
+      font-family: $specialFont;
+      color: $mainWhite;
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      font-weight: 300;
+    }
+    @mixin atSmall {
+      h2 {
+        font-size: 1.4rem;
+      }
+    }
+
+    @mixin atLarge {
+      padding-bottom: 0px;
+      h2 {
+        font-size: 2.3rem;
+      }
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    @mixin atMedium {
+      margin-top: 15px;
+    }
+    @mixin atLarge {
+      margin-top: 60px;
+    }
+  }
+  &__pagination {
+    width: 100%;
+    margin-top: 20px;
+    li {
+      display: inline-block;
+      list-style: none;
+      transition: 0.3s;
+      cursor: pointer;
+      a {
+        text-decoration: none;
+        line-height: 0;
+        margin: 6px;
+        font-size: 1rem;
+        font-weight: 400;
+      }
+      &:hover {
+        background-color: $mainOrange;
+        a {
+          color: $mainWhite;
+        }
+      }
+    }
+    @mixin atMedium {
+      a {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  &__pagination-active {
+    background-color: $mainOrange;
+    a {
+      color: $mainWhite;
+    }
+  }
+}

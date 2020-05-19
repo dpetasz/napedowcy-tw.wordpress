@@ -1,0 +1,67 @@
+.welcome-section {
+  position: relative;
+  border-bottom: 10px solid $mainDark;
+
+  background-color: black;
+
+  font-family: $specialFont;
+  text-transform: uppercase;
+  color: $mainWhite;
+  z-index: 2;
+
+  &__image {
+    filter: brightness(0.5);
+  }
+
+  &__text-content {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+  &__title {
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 2.8rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    @mixin atSmall {
+      margin-bottom: 20px;
+      font-size: 3.6rem;
+    }
+    @mixin atLarge {
+      margin-bottom: 40px;
+      font-size: 6rem;
+      letter-spacing: 10px;
+    }
+  }
+  &__subtitle {
+    margin: 0 0 30px 0;
+    font-weight: 300;
+    font-size: 1.2rem;
+    @mixin atSmall {
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+    @mixin atLarge {
+      font-size: 4rem;
+      letter-spacing: 3px;
+    }
+  }
+  &__description {
+    font-weight: 100;
+    font-size: 1rem;
+    padding-bottom: 30px;
+    @mixin atSmall {
+      font-size: 1.6rem;
+      padding-bottom: 20px;
+    }
+    @mixin atLarge {
+      padding-bottom: 60px;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+    }
+  }
+}

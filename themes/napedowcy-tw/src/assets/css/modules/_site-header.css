@@ -1,0 +1,174 @@
+.site-header {
+  position: relative;
+  width: 100%;
+
+  @mixin atMedium {
+    flex-direction: row;
+  }
+  @mixin atLarge {
+    display: flex;
+    position: fixed;
+    z-index: 10;
+    background-color: rgba($mainDark, 0.5);
+
+    &--dark {
+      background-color: rgba($mainDark, 0.85);
+    }
+  }
+  &__main-content {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 0;
+    transition: background-color 0.4s ease-out;
+    &--is-expanded {
+      background-color: rgba($mainDark, 0.95);
+      height: auto;
+      z-index: 10;
+    }
+    @mixin atLarge {
+      position: static;
+      justify-content: space-between;
+      align-items: center;
+      height: auto;
+    }
+  }
+  &__menu-icon {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    z-index: 20;
+    top: 10px;
+    right: 10px;
+    padding: 5px;
+    background-color: $mainDark;
+    @mixin atMedium {
+      top: 15px;
+      right: 15px;
+      width: 40px;
+      height: 40px;
+    }
+    @mixin atLarge {
+      display: none;
+    }
+
+    &__middle {
+      position: relative;
+      flex: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 3px;
+      background-color: $mainOrange;
+      transition: all 0.3s ease-out;
+      @mixin atMedium {
+        height: 5px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        top: -7px;
+        background-color: $mainOrange;
+        transition: transform 0.3s ease-out;
+
+        @mixin atMedium {
+          top: -10px;
+          height: 5px;
+        }
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        top: 7px;
+        background-color: $mainOrange;
+        transition: transform 0.3s ease-out;
+        @mixin atMedium {
+          top: 10px;
+          height: 5px;
+        }
+      }
+    }
+  }
+  &__menu-icon--close-x {
+    .site-header__menu-icon__middle {
+      transform: rotate(45deg);
+    }
+    .site-header__menu-icon__middle {
+      &::before,
+      &::after {
+        top: 0;
+        transform: rotate(90deg);
+      }
+    }
+  }
+  &__logo {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+    @mixin atLarge {
+      width:40%;
+      position: static;
+      justify-content: flex-start;
+    }
+
+    img {
+      padding: 10px;
+      width: 60%;
+      background-color: rgba($mainDark, 0.8);
+
+      transition: 0.5s ease-in-out;
+
+      @mixin atLarge {
+        background-color: rgba($mainDark, 1);
+      }
+    }
+    &--small {
+      img {
+        @mixin atLarge {
+          width: 40%;
+          padding: 5px 0;
+          background-color: rgba($mainDark, 0);
+        }
+      }
+    }
+  }
+  &__menu-content {
+    opacity: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 30px;
+    padding: 60px 0;
+    z-index: -10;
+    transform: scale(0.5);
+    transition: all 0.4s ease-out;
+    @mixin atLarge {
+      padding: 0;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      margin: 0;
+      opacity: 1;
+      z-index: 1;
+      transform: scale(1);
+    }
+    &--is-visible {
+      transform: scale(1);
+      opacity: 1;
+      z-index: 10;
+    }
+  }
+}

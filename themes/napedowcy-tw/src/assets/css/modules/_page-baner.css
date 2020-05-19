@@ -1,0 +1,108 @@
+.page-baner {
+  position: relative;
+  border-bottom: 10px solid $mainDark;
+  font-family: $specialFont;
+  color: $mainWhite;
+  z-index: 2;
+  &-subpage {
+    text-align: left;
+    padding-bottom: 0;
+  }
+
+  &__image {
+    filter: brightness(0.5) blur(3px);
+  }
+
+  &__text-content {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+  &__title {
+    width: 100%;
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 2.8rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    &-subpage {
+      margin: 50px 0 20px 0;
+      text-transform: none;
+      text-align: center;
+      letter-spacing: 2px;
+      font-size: 2rem;
+    }
+
+    @mixin atSmall {
+      margin-bottom: 20px;
+      font-size: 3.6rem;
+    }
+    @mixin atLarge {
+      margin-bottom: 40px;
+      font-size: 6rem;
+      letter-spacing: 10px;
+      &-subpage {
+        margin: 50px 0 20px 0;
+        text-align: left;
+        letter-spacing: 5px;
+        font-size: 5rem;
+      }
+    }
+  }
+  &__subtitle {
+    margin: 0 0 30px 0;
+    font-weight: 300;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    &-subpage {
+      font-size: 1.4rem;
+      text-align: center;
+      line-height: 0;
+    }
+    @mixin atSmall {
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+    @mixin atLarge {
+      font-size: 4rem;
+      letter-spacing: 3px;
+      &-subpage {
+        line-height: 1.8rem;
+        font-size: 3rem;
+        text-align: left;
+      }
+    }
+  }
+  &__description {
+    font-weight: 100;
+    font-size: 1rem;
+    padding-bottom: 30px;
+    &-performance {
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    @mixin atSmall {
+      font-size: 1.6rem;
+      padding-bottom: 20px;
+    }
+    @mixin atLarge {
+      font-size: 2.5rem;
+      padding-bottom: 60px;
+      letter-spacing: 2px;
+      &-subpage {
+        text-align: left;
+        padding-bottom: 0;
+      }
+      &-performance {
+        text-align: left;
+        font-size: 1.8rem;
+        line-height: 2.6rem;
+      }
+    }
+  }
+}

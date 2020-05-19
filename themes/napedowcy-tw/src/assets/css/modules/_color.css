@@ -1,0 +1,14 @@
+.color {
+  &--white {
+    color: $mainWhite;
+  }
+  &--orange {
+    color: $mainOrange;
+  }
+  &--dark {
+    color: $mainDark;
+  }
+  &--gray {
+    color: gray;
+  }
+}

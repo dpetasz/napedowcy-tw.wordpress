@@ -1,0 +1,217 @@
+.site-slider {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  font-family: $specialFont;
+  text-transform: uppercase;
+  color: $mainWhite;
+  overflow: hidden;
+  @mixin atLarge {
+    height: 650px;
+  }
+  &__slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+  }
+
+  &--moveLeftCurrentSlide {
+    animation-name: moveLeftCurrent;
+    animation-duration: 0.7s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+  &--moveLeftNextSlide {
+    animation-name: moveLeftNext;
+    animation-duration: 0.7s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+  @keyframes moveLeftCurrent {
+    from {
+      margin-left: 0;
+      opacity: 1;
+    }
+    to {
+      margin-left: -100%;
+      opacity: 1;
+    }
+  }
+  @keyframes moveLeftNext {
+    from {
+      margin-left: 100%;
+      opacity: 1;
+    }
+    to {
+      margin-left: 0%;
+      opacity: 1;
+    }
+  }
+
+  &--moveRightCurrentSlide {
+    animation-name: moveRightCurrent;
+    animation-duration: 0.7s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+  &--moveRightPrevSlide {
+    animation-name: moveRightPrev;
+    animation-duration: 0.7s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+  @keyframes moveRightCurrent {
+    from {
+      margin-left: 0;
+      opacity: 1;
+    }
+    to {
+      margin-left: 100%;
+      opacity: 1;
+    }
+  }
+  @keyframes moveRightPrev {
+    from {
+      margin-left: -100%;
+      opacity: 1;
+    }
+    to {
+      margin-left: 0%;
+      opacity: 1;
+    }
+  }
+
+  &__btn-container {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    @mixin atMedium {
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%);
+      transform: translateX(-50%);
+    }
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 50px;
+    cursor: pointer;
+    background-color: $mainDark;
+    opacity: 0.4;
+    color: $mainWhite;
+    transition: opacity 0.3s ease-in;
+    @mixin atMedium {
+      width: 60px;
+      height: 70px;
+    }
+    &:hover {
+      opacity: 0.7;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      border: 4px solid #fff;
+      border-bottom: 0;
+      border-right: 0;
+      height: 15px;
+      width: 15px;
+      @mixin atMedium {
+        height: 25px;
+        width: 25px;
+      }
+    }
+    &--prev {
+      left: 0;
+    }
+    &--prev::before {
+      transform: rotate(-45deg);
+    }
+    &--next {
+      right: 0;
+    }
+    &--next::before {
+      transform: rotate(135deg);
+    }
+  }
+  &__dots-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
+    height: 20px;
+  }
+  &__dots {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    z-index: 10;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: 0.7s;
+    &--active {
+      background-color: $mainWhite;
+      border: 2px solid $mainDark;
+      transition: 0.7s;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__text-content {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    @mixin atMedium {
+      width: 100%;
+    }
+  }
+  &__title {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 6px $mainDark;
+    @mixin atLarge {
+      margin-bottom: 40px;
+      font-size: 4.8rem;
+      letter-spacing: 10px;
+      text-shadow: 5px 5px 10px black;
+    }
+  }
+  &__subtitle {
+    font-size: 1rem;
+    padding: 0 0 20px 0;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-shadow: 5px 5px 10px black;
+    @mixin atLarge {
+      padding-bottom: 80px;
+      font-size: 2.5rem;
+      letter-spacing: 5px;
+    }
+  }
+}

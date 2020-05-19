@@ -1,0 +1,33 @@
+body {
+  font-family: $defaultFont;
+  background-color: $mainDark;
+  color: $mainDark;
+  font-weight: 300;
+  line-height: 1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: $mainWhite;
+}

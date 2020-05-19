@@ -1,0 +1,19 @@
+.wrapper {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  @mixin atLarge {
+    padding: 0 10px;
+    max-width: 1440px;
+    &__text-content {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

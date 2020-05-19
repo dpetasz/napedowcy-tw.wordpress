@@ -1,0 +1,120 @@
+.site-footer {
+  background-color: $mainDark;
+  color: $mainWhite;
+  width: 100%;
+
+  &--current {
+    a {
+      color: $mainOrange;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__main {
+    border-bottom: 2px solid rgba($mainWhite, 0.5);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+
+    @mixin atMedium {
+      flex-direction: row;
+    }
+  }
+
+  &__order {
+    @mixin atMedium {
+      order: -1;
+    }
+  }
+
+  &__logo {
+    padding: 10px 0;
+
+    img {
+      margin-right: auto;
+      margin-left: auto;
+      width: 160px;
+
+      @mixin atLarge {
+        width: 280px;
+      }
+    }
+
+    @mixin atMedium {
+      display: flex;
+      align-items: center;
+      flex-basis: 33%;
+    }
+  }
+
+  &__nav {
+    padding-bottom: 10px;
+
+    a {
+      line-height: 1.3rem;
+    }
+
+    a:hover {
+      color: $mainOrange;
+    }
+
+    @mixin atMedium {
+      flex-basis: 33%;
+      padding-top: 10px;
+    }
+
+    @mixin atLarge {
+      padding: 40px 0 30px 0;
+
+      li {
+        padding-bottom: 10px;
+      }
+
+      a {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &__contact {
+    flex-basis: 33%;
+    text-align: left;
+    padding-bottom: 10px;
+    line-height: 1.2rem;
+
+    @mixin atMedium {
+      display: flex;
+      align-items: center;
+      flex-basis: 33%;
+      padding-bottom: 0;
+      font-size: 0.8rem;
+      justify-content: flex-end;
+      text-align: end;
+    }
+
+    @mixin atLarge {
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 10px 0;
+    font-size: 0.8rem;
+
+    @mixin atLarge {
+      font-size: 1rem;
+      padding: 20px;
+    }
+  }
+
+
+}

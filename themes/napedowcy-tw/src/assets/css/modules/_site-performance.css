@@ -1,0 +1,238 @@
+.site-performance {
+  padding: 40px 10px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  z-index: 2;
+
+  @mixin atLarge {
+    padding: 60px 20px;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    background-color: $mainWhite;
+    align-items: center;
+    padding: 60px 10px;
+    @mixin atSmall {
+      max-width: 640px;
+    }
+    @mixin atMedium {
+      max-width: 960px;
+      flex-direction: row;
+      justify-content: center;
+    }
+    @mixin atLarge {
+      margin: 0 auto;
+      max-width: 1200px;
+
+      padding: 100px 10px;
+    }
+  }
+  &__main-content {
+    position: relative;
+
+    @mixin atSmall {
+      max-width: 480px;
+    }
+    @mixin atMedium {
+      max-width: 640px;
+    }
+    @mixin atLarge {
+      max-width: 960px;
+    }
+  }
+  &__top-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $mainOrangeDark;
+    box-shadow: 10px 8px 8px -1px rgba($mainDark, 0.87);
+    margin-top: -99px;
+    text-align: center;
+    p {
+      padding: 10px 20px;
+      font-weight: 300;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      color: $mainWhite;
+    }
+    h2 {
+      a {
+        padding: 7px 40px;
+        font-weight: 300;
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+        display: block;
+        text-decoration: none;
+        color: $mainWhite;
+        background-color: $mainOrange;
+        transition: 0.3s;
+        &:hover {
+          filter: brightness(80%);
+        }
+      }
+    }
+    @mixin atMedium {
+      flex-direction: row;
+      width: 90%;
+      margin: -82px auto 0 auto;
+      text-align: center;
+      p {
+        padding: 10px 20px;
+        font-size: 1.5rem;
+        width: 100%;
+      }
+      h2 {
+        a {
+          padding: 10px 20px;
+          font-size: 1.5rem;
+          transition: 0.3s;
+        }
+      }
+    }
+    @mixin atLarge {
+      flex-direction: row;
+      left: 0;
+      width: auto;
+      transform: translateX(0);
+      margin-top: -130px;
+      p {
+        padding: 20px 40px;
+        font-size: 1.4rem;
+      }
+      h2 {
+        a {
+          padding: 15px 40px;
+          font-size: 1.875rem;
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+  &__links-content {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 10px 8px 8px -1px rgba($mainDark, 0.87);
+    h2 {
+      background-color: $mainOrangeDark;
+      color: $mainWhite;
+      width: 100%;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 1.5rem;
+      font-weight: 300;
+      @mixin atMedium {
+        font-size: 2.2rem;
+        font-weight: 400;
+      }
+    }
+    @mixin atSmall {
+      width: 60%;
+    }
+    @mixin atMedium {
+      text-align: justify;
+    }
+    @mixin atLarge {
+      float: right;
+      width: 30%;
+      max-width: 300px;
+      margin: 0 0 20px 20px;
+    }
+  }
+  &__description-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    div {
+      width: 60%;
+    }
+    div:last-of-type {
+      order: -1;
+    }
+    h3 {
+      text-align: center;
+      font-weight: 400;
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+    p {
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.8rem;
+    }
+    table {
+      border-collapse: collapse;
+      margin: 0 auto 0 auto;
+
+      td,
+      th {
+        font-size: 1.4rem;
+        width: 80%;
+        padding: 5px 0;
+        border: 1px solid $mainDark;
+        font-weight: 400;
+      }
+      tr:nth-of-type(odd) {
+        background-color: rgba($mainDark, 0.3);
+      }
+      tr:nth-of-type(even) {
+        background-color: rgba($mainDark, 0.1);
+      }
+      td {
+        font-weight: 300;
+        width: 50px;
+        text-align: center;
+      }
+    }
+
+    @mixin atLarge {
+      flex-direction: row;
+      margin-top: 0;
+      div {
+        padding: 0;
+        width: 50%;
+      }
+      div:last-of-type {
+        order: 1;
+      }
+      h3 {
+        margin-top: 0;
+        font-size: 1.6rem;
+      }
+      p {
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+      }
+    }
+  }
+  &__text-content {
+    h3 {
+      margin: 20px 0;
+      font-size: 1.4rem;
+      text-align: center;
+      font-weight: 400;
+    }
+    p {
+      font-size: 1rem;
+      text-align: justify;
+      line-height: 1.4rem;
+    }
+    @mixin atMedium {
+      h3 {
+        font-size: 1.6rem;
+      }
+      p {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+      }
+    }
+  }
+}
