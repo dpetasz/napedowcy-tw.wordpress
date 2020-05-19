@@ -1,16 +1,38 @@
 .page-baner {
   position: relative;
+  width: 100%;
+  height: 480px;
   border-bottom: 10px solid $mainDark;
   font-family: $specialFont;
   color: $mainWhite;
+  overflow: hidden;
   z-index: 2;
-  &-subpage {
+
+
+  @mixin atSmall {
+    height: 500px;
+  }
+
+  @mixin atMedium {
+    height: 460px;
+  }
+
+  @mixin atLarge {
+    height: 970px;
+  }
+
+  & &-subpage {
     text-align: left;
     padding-bottom: 0;
   }
 
-  &__image {
-    filter: brightness(0.5) blur(3px);
+  &__img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    filter: blur(3px) brightness(60%);
   }
 
   &__text-content {
@@ -21,6 +43,7 @@
     width: 100%;
     text-align: center;
   }
+
   &__title {
     width: 100%;
     margin-bottom: 30px;
@@ -28,6 +51,7 @@
     font-size: 2.8rem;
     letter-spacing: 5px;
     text-transform: uppercase;
+
     &-subpage {
       margin: 50px 0 20px 0;
       text-transform: none;
@@ -40,10 +64,12 @@
       margin-bottom: 20px;
       font-size: 3.6rem;
     }
+
     @mixin atLarge {
       margin-bottom: 40px;
       font-size: 6rem;
       letter-spacing: 10px;
+
       &-subpage {
         margin: 50px 0 20px 0;
         text-align: left;
@@ -52,23 +78,28 @@
       }
     }
   }
+
   &__subtitle {
     margin: 0 0 30px 0;
     font-weight: 300;
     font-size: 1.2rem;
     text-transform: uppercase;
+
     &-subpage {
       font-size: 1.4rem;
       text-align: center;
       line-height: 0;
     }
+
     @mixin atSmall {
       margin-bottom: 30px;
       font-size: 2rem;
     }
+
     @mixin atLarge {
       font-size: 4rem;
       letter-spacing: 3px;
+
       &-subpage {
         line-height: 1.8rem;
         font-size: 3rem;
@@ -76,10 +107,12 @@
       }
     }
   }
+
   &__description {
     font-weight: 100;
     font-size: 1rem;
     padding-bottom: 30px;
+
     &-performance {
       text-align: center;
       font-size: 1rem;
@@ -90,14 +123,17 @@
       font-size: 1.6rem;
       padding-bottom: 20px;
     }
+
     @mixin atLarge {
       font-size: 2.5rem;
       padding-bottom: 60px;
       letter-spacing: 2px;
+
       &-subpage {
         text-align: left;
         padding-bottom: 0;
       }
+
       &-performance {
         text-align: left;
         font-size: 1.8rem;

@@ -12,4 +12,9 @@ function napedowcy_title_tag(){
 }
 add_action( 'after_setup_theme', 'napedowcy_title_tag' );
 
+function napedowcy_features(){
 
+    add_image_size( 'bunner_home_page' , 1920, 970, true );
+
+}
+add_action( 'after_setup_theme', 'napedowcy_features' );

@@ -1,27 +1,29 @@
 <?php get_header();
-?>
+
+
+while(have_posts()){
+    the_post();?>
+    
+
 <section class="page-baner">
-    <picture>
-        <source srcset="<?php echo get_theme_file_uri('/dist/assets/images/stage--high.jpg'); ?>" media="(min-width: 1981px)" />
-        <source srcset="<?php echo get_theme_file_uri('/dist/assets/images/stage--large.jpg'); ?>" media="(min-width: 1441px)" />
-        <source srcset="<?php echo get_theme_file_uri('/dist/assets/images/stage--medium.jpg'); ?>" media="(min-width: 990px)" />
-        <source srcset="<?php echo get_theme_file_uri('/dist/assets/images/stage--small.jpg'); ?>" media="(min-width: 640px)" />
-        <img src="<?php echo get_theme_file_uri('/dist/assets/images/stage--smaller.jpg'); ?>" alt="welcome" class="page-baner__image" />
-    </picture>
+    <div class="page-baner__img"  style="background-image: url(<?php echo get_theme_file_uri('/dist/assets/images/stage--large.jpg') ?>);"></div>
     <div class="page-baner__text-content">
         <div class="wrapper">
-            <h1 class="page-baner__title">Witamy!</h1>
-            <h2 class="page-baner__subtitle">Napędzamy scenę główną</h2>
+            <h1 class="page-baner__title"><?php the_field('bunner_title') ?></h1>
+            <h2 class="page-baner__subtitle"><?php the_field('bunner_subtitle') ?></h2>
             <p class="page-baner__description">
-                Teatru Wielkiego w Warszawie
+            <?php the_field('bunner_description') ?>
             </p>
             <p>
-                <a href="aboutUs.html" class="btn btn--large">Poznaj nas</a>
+                <a href="<?php echo site_url( '/about-us' ) ?>" class="btn btn--large"><?php the_field('bunner_button') ?></a>
             </p>
         </div>
     </div>
 </section>
-
+<?php
+            } wp_reset_postdata();
+            
+            ?>
 <div class="main-section" style="background-image: url(<?php echo get_theme_file_uri('/dist/assets/images/kurtyna--small.jpg') ?>);">
     <div class="main-section__container wrapper">
         <div class="main-section__article main-section--border">
@@ -79,7 +81,7 @@
                 <div class="article__text-content">
                     <h3><a href="<?php echo get_the_permalink()?>"><?php the_title(); ?></a></h3>
                     <p>
-                    <?php echo wp_trim_words( get_the_content(), 30 )  ?>
+                    <?php echo wp_trim_words( get_the_content(), 25 )  ?>
                     </p>
                 </div>
             </div>

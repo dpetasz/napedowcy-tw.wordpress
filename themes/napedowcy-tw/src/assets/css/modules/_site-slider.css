@@ -6,9 +6,11 @@
   text-transform: uppercase;
   color: $mainWhite;
   overflow: hidden;
+
   @mixin atLarge {
     height: 650px;
   }
+
   &__slide {
     position: absolute;
     width: 100%;
@@ -24,27 +26,32 @@
     animation-timing-function: linear;
     animation-fill-mode: forwards;
   }
+
   &--moveLeftNextSlide {
     animation-name: moveLeftNext;
     animation-duration: 0.7s;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
   }
+
   @keyframes moveLeftCurrent {
     from {
       margin-left: 0;
       opacity: 1;
     }
+
     to {
       margin-left: -100%;
       opacity: 1;
     }
   }
+
   @keyframes moveLeftNext {
     from {
       margin-left: 100%;
       opacity: 1;
     }
+
     to {
       margin-left: 0%;
       opacity: 1;
@@ -57,27 +64,32 @@
     animation-timing-function: linear;
     animation-fill-mode: forwards;
   }
+
   &--moveRightPrevSlide {
     animation-name: moveRightPrev;
     animation-duration: 0.7s;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
   }
+
   @keyframes moveRightCurrent {
     from {
       margin-left: 0;
       opacity: 1;
     }
+
     to {
       margin-left: 100%;
       opacity: 1;
     }
   }
+
   @keyframes moveRightPrev {
     from {
       margin-left: -100%;
       opacity: 1;
     }
+
     to {
       margin-left: 0%;
       opacity: 1;
@@ -92,6 +104,7 @@
     top: 50%;
     transform: translateY(-50%);
     z-index: 2;
+
     @mixin atMedium {
       top: 50%;
       left: 50%;
@@ -99,6 +112,7 @@
       transform: translateX(-50%);
     }
   }
+
   &__btn {
     display: flex;
     align-items: center;
@@ -110,13 +124,16 @@
     opacity: 0.4;
     color: $mainWhite;
     transition: opacity 0.3s ease-in;
+
     @mixin atMedium {
       width: 60px;
       height: 70px;
     }
+
     &:hover {
       opacity: 0.7;
     }
+
     &::before {
       content: "";
       position: absolute;
@@ -125,24 +142,30 @@
       border-right: 0;
       height: 15px;
       width: 15px;
+
       @mixin atMedium {
         height: 25px;
         width: 25px;
       }
     }
+
     &--prev {
       left: 0;
     }
+
     &--prev::before {
       transform: rotate(-45deg);
     }
+
     &--next {
       right: 0;
     }
+
     &--next::before {
       transform: rotate(135deg);
     }
   }
+
   &__dots-container {
     position: absolute;
     bottom: 20px;
@@ -153,6 +176,7 @@
     width: 120px;
     height: 20px;
   }
+
   &__dots {
     width: 20px;
     height: 20px;
@@ -161,6 +185,7 @@
     border: 2px solid white;
     cursor: pointer;
     transition: 0.7s;
+
     &--active {
       background-color: $mainWhite;
       border: 2px solid $mainDark;
@@ -179,14 +204,17 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
   &__text-content {
     width: 80%;
     margin: auto;
     text-align: center;
+
     @mixin atMedium {
       width: 100%;
     }
   }
+
   &__title {
     margin-bottom: 20px;
     font-size: 1.8rem;
@@ -194,6 +222,7 @@
     text-transform: uppercase;
     letter-spacing: 3px;
     text-shadow: 2px 2px 6px $mainDark;
+
     @mixin atLarge {
       margin-bottom: 40px;
       font-size: 4.8rem;
@@ -201,6 +230,7 @@
       text-shadow: 5px 5px 10px black;
     }
   }
+
   &__subtitle {
     font-size: 1rem;
     padding: 0 0 20px 0;
@@ -208,6 +238,7 @@
     font-weight: 300;
     letter-spacing: 3px;
     text-shadow: 5px 5px 10px black;
+
     @mixin atLarge {
       padding-bottom: 80px;
       font-size: 2.5rem;
