@@ -11,9 +11,9 @@ let stickyHeader = new StickyHeader(80);
 let mobileMenu = new MobileMenu();
 
 new RevealOnScroll(document.querySelectorAll(".scroll"), 90);
-new RevealOnScroll(document.querySelectorAll(".main-section__title"), 90);
-new RevealOnScroll(document.querySelectorAll(".article"), 90);
-new RevealOnScroll(document.querySelectorAll(".main-section__btn"), 90);
+// new RevealOnScroll(document.querySelectorAll(".main-section__title"), 90);
+// new RevealOnScroll(document.querySelectorAll(".article"), 90);
+// new RevealOnScroll(document.querySelectorAll(".main-section__btn"), 90);
 new RevealOnScroll(document.querySelectorAll(".site-slider__text-content"), 90);
 if (module.hot) {
   module.hot.accept();
