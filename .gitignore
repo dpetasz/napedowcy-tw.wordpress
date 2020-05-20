@@ -13,8 +13,6 @@ node_modules/
 .tmp/
 dist/
 languages/
-upgrade/
-uploads/
 
 # OS or Editor folders
 .DS_Store

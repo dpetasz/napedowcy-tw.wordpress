@@ -6,16 +6,16 @@ while(have_posts()){
     
 
 <section class="page-baner">
-    <div class="page-baner__img"  style="background-image: url(<?php echo get_theme_file_uri('/dist/assets/images/stage--large.jpg') ?>);"></div>
+    <div class="page-baner__img"  style="background-image: url(<?php $bannerImage = get_field('banner_background_image'); echo $bannerImage['url']; ?>);"></div>
     <div class="page-baner__text-content">
         <div class="wrapper">
-            <h1 class="page-baner__title"><?php the_field('bunner_title') ?></h1>
-            <h2 class="page-baner__subtitle"><?php the_field('bunner_subtitle') ?></h2>
+            <h1 class="page-baner__title"><?php the_field('banner_title') ?></h1>
+            <h2 class="page-baner__subtitle"><?php the_field('banner_subtitle') ?></h2>
             <p class="page-baner__description">
-            <?php the_field('bunner_description') ?>
+            <?php the_field('banner_description') ?>
             </p>
             <p>
-                <a href="<?php echo site_url( '/about-us' ) ?>" class="btn btn--large"><?php the_field('bunner_button') ?></a>
+                <a href="<?php echo site_url( '/about-us' ) ?>" class="btn btn--large"><?php the_field('banner_button') ?></a>
             </p>
         </div>
     </div>
