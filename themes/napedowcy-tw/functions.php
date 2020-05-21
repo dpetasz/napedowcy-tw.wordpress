@@ -15,6 +15,8 @@ add_action( 'after_setup_theme', 'napedowcy_title_tag' );
 function napedowcy_features(){
 
     add_image_size( 'bunner_home_page' , 1920, 970, true );
+    add_image_size( 'slider_home_page' , 1920, 650, true );
+    add_image_size( 'bunner_performance' , 1920, 400, true );
 
 }
 add_action( 'after_setup_theme', 'napedowcy_features' );

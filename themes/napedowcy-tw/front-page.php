@@ -6,7 +6,7 @@ while(have_posts()){
     
 
 <section class="page-baner">
-    <div class="page-baner__img"  style="background-image: url(<?php $bannerImage = get_field('banner_background_image'); echo $bannerImage['url']; ?>);"></div>
+    <div class="page-baner__img"  style="background-image: url(<?php $bannerImage = get_field('banner_background_image'); echo $bannerImage['sizes']['bunner_home_page']; ?>);"></div>
     <div class="page-baner__text-content">
         <div class="wrapper">
             <h1 class="page-baner__title"><?php the_field('banner_title') ?></h1>
