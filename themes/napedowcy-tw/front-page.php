@@ -2,26 +2,11 @@
 
 
 while(have_posts()){
-    the_post();?>
+    the_post();
     
-
-<section class="page-baner">
-    <div class="page-baner__img"  style="background-image: url(<?php $bannerImage = get_field('banner_background_image'); echo $bannerImage['sizes']['bunner_home_page']; ?>);"></div>
-    <div class="page-baner__text-content">
-        <div class="wrapper">
-            <h1 class="page-baner__title"><?php the_field('banner_title') ?></h1>
-            <h2 class="page-baner__subtitle"><?php the_field('banner_subtitle') ?></h2>
-            <p class="page-baner__description">
-            <?php the_field('banner_description') ?>
-            </p>
-            <p>
-                <a href="<?php echo site_url( '/about-us' ) ?>" class="btn btn--large"><?php the_field('banner_button') ?></a>
-            </p>
-        </div>
-    </div>
-</section>
-<?php
-            } wp_reset_postdata();
+pageBanner(array(
+    'home-page' => true,
+)); } wp_reset_postdata();
             
             ?>
 <div class="main-section" style="background-image: url(<?php echo get_theme_file_uri('/dist/assets/images/kurtyna--small.jpg') ?>);">

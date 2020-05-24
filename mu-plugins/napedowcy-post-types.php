@@ -22,7 +22,8 @@ function napedowcy_post_types(){
             'edit_item' => 'Edytuj przedstawienie',
             'all_items' => 'Wszystkie przedstawienia',
             'singular_name' => 'Przedstawienie',
-        ),'taxonomies'  => array( 'category' ),
+        ),
+        'taxonomies'  => array( 'category' ),
         'menu_icon' => 'dashicons-format-audio'
     ) );
     register_post_type( 'slider', array(
