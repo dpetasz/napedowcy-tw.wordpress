@@ -11,6 +11,37 @@
     height: 650px;
   }
 
+  &__button {
+    border: 2px solid $mainOrange;
+    background-color: rgba($mainDark, 0.8);
+    color: $mainOrange;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    font-weight: 300;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: rgba($mainOrange, 0.8);
+      color: $mainWhite;
+    }
+
+    @mixin atMedium {
+      border: 3px solid $mainOrange;
+      letter-spacing: 2px;
+      padding: 0.4rem;
+      font-size: 0.9rem;
+    }
+
+    @mixin atLarge {
+      letter-spacing: 3px;
+      padding: 1rem 2.5rem;
+      font-size: 1.5rem;
+    }
+  }
+
   &__slide {
     position: absolute;
     width: 100%;

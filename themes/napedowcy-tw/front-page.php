@@ -26,6 +26,10 @@ pageBanner(array(
                 'posts_per_page' => 3,
                 'post_type' => 'device'
             ));
+            $slider = new WP_Query(array(
+                'posts_per_page' => 5,
+                'post_type' => 'slider'
+            ));
 
             while($homepagePostsPerformances->have_posts()){
                 $homepagePostsPerformances->the_post();?>
@@ -86,62 +90,12 @@ pageBanner(array(
         <div class="site-slider__btn site-slider__btn--prev" data-btn-prev></div>
         <div class="site-slider__btn site-slider__btn--next" data-btn-next></div>
     </div>
-    <div class="site-slider__slide" style="background-image: url(<?php echo get_theme_file_uri('/dist/assets/images/TW--large.jpg);') ?>);" data-slide>
-        <div class="site-slider__content wrapper">
-            <div class="site-slider__text-content scroll">
-                <h2 class="site-slider__title">teatr wielki</h2>
-                <h3 class="site-slider__subtitle">
-                    poznaj historię techniki teatralnej
-                </h3>
-
-                <p>
-                    <a href="#" class="btn">czytaj więcej</a>
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="site-slider__slide" style="background-image: url(<?php echo get_theme_file_uri('/dist/assets/images/pod-zapadniami-1.jpg') ?>);" data-slide>
-        <div class="site-slider__content wrapper">
-            <div class="site-slider__text-content scroll">
-                <h2 class="site-slider__title">teatr wielki</h2>
-                <h3 class="site-slider__subtitle">
-                    poznaj co kryje się pod zapadniami
-                </h3>
-
-                <p>
-                    <a href="#" class="btn">czytaj więcej</a>
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="site-slider__slide" style="background-image: url(<?php echo get_theme_file_uri('/dist/assets/images/pod-zapadniami-2.jpg') ?>);" data-slide>
-        <div class="site-slider__content wrapper">
-            <div class="site-slider__text-content scroll">
-                <h2 class="site-slider__title">teatr wielki</h2>
-                <h3 class="site-slider__subtitle">
-                    poznaj więcej urządzeń sceniacznych
-                </h3>
-
-                <p>
-                    <a href="#" class="btn">czytaj więcej</a>
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="site-slider__slide" style="background-image: url(<?php echo get_theme_file_uri('/dist/assets/images/pod-zapadniami-3.jpg') ?>);" data-slide>
-        <div class="site-slider__content wrapper">
-            <div class="site-slider__text-content scroll">
-                <h2 class="site-slider__title">teatr wielki</h2>
-                <h3 class="site-slider__subtitle">
-                    odkryj wiele tajników zaplecza sceny
-                </h3>
-
-                <p>
-                    <a href="#" class="btn">czytaj więcej</a>
-                </p>
-            </div>
-        </div>
-    </div>
+    <?php while($slider->have_posts()){
+                $slider->the_post();
+                pageSlider(array(
+                    'btn-link' => get_permalink()
+                ));
+                } ?>
     <div class="site-slider__dots-container" data-dots-container></div>
 </section>
 <?php get_footer();

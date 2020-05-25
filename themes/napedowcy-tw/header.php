@@ -26,7 +26,7 @@
                         <li <?php if(is_page( 'about-us' ) or wp_get_post_parent_id(0) == 6) echo 'class="primary-nav--current"' ?> >
                             <a href="<?php echo site_url( '/about-us' ) ?>" >O nas</a>
                         </li>
-                        <li <?php if(is_page('performances') or wp_get_post_parent_id(0) == 8) echo 'class="primary-nav--current"' ?>>
+                        <li <?php if(is_page('performances') or wp_get_post_parent_id(0) == 8)   echo 'class="primary-nav--current"' ?>>
                             <a href="<?php echo site_url( '/performances' ) ?>" >Przedstawienia</a>
                         </li>
                         <li <?php if(is_page('devices') or wp_get_post_parent_id(0) == 24) echo 'class="primary-nav--current"' ?>>

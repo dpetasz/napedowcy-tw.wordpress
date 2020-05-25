@@ -1,26 +1,7 @@
 <?php get_header();
+pageBanner();
 ?>
-<section class="page-baner">
-    <picture>
-        <source srcset="<?php echo get_theme_file_uri('/dist/assets/images/stage--high.jpg'); ?>" media="(min-width: 1981px)" />
-        <source srcset="<?php echo get_theme_file_uri('/dist/assets/images/stage--large.jpg'); ?>" media="(min-width: 1441px)" />
-        <source srcset="<?php echo get_theme_file_uri('/dist/assets/images/stage--medium.jpg'); ?>" media="(min-width: 990px)" />
-        <source srcset="<?php echo get_theme_file_uri('/dist/assets/images/stage--small.jpg'); ?>" media="(min-width: 640px)" />
-        <img src="<?php echo get_theme_file_uri('/dist/assets/images/stage--smaller.jpg'); ?>" alt="welcome" class="page-baner__image" />
-    </picture>
-    <div class="page-baner__text-content">
-        <div class="wrapper">
-            <h1 class="page-baner__title"><?php the_archive_title( ) ?></h1>
-            <h2 class="page-baner__subtitle">Napędzamy scenę główną</h2>
-            <p class="page-baner__description">
-                Teatru Wielkiego w Warszawie
-            </p>
-            <p>
-                <a href="aboutUs.html" class="btn btn--large">Poznaj nas</a>
-            </p>
-        </div>
-    </div>
-</section>
+
 
 <div class="main-section" style="background-image: url(<?php echo get_theme_file_uri('/dist/assets/images/kurtyna--small.jpg') ?>);">
     <div class="main-section__container wrapper">

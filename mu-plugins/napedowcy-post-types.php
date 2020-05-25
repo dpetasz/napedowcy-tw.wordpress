@@ -10,7 +10,8 @@ function napedowcy_post_types(){
             'all_items' => 'Wszystkie urządzenia',
             'singular_name' => 'Urządzenie',
         ),
-        'menu_icon' => 'dashicons-image-rotate'
+        'menu_icon' => 'dashicons-image-rotate',
+        'taxonomies'  => array( 'category' ),
     ) );
 
     register_post_type( 'performance', array(
@@ -27,7 +28,7 @@ function napedowcy_post_types(){
         'menu_icon' => 'dashicons-format-audio'
     ) );
     register_post_type( 'slider', array(
-        'supports' => array('title', 'thumbnail'),
+        'supports' => array('title', 'thumbnail','editor'),
         'public'=> true,
         'labels'=> array(
             'name' => 'Slider',
@@ -37,6 +38,18 @@ function napedowcy_post_types(){
             'singular_name' => 'Slider',
         ),
         'menu_icon' => 'dashicons-images-alt'
+    ) );
+    register_post_type( 'ourTeam', array(
+        'supports' => array('title', 'thumbnail','editor'),
+        'public'=> true,
+        'labels'=> array(
+            'name' => 'Pracownik',
+            'add_new_item' => 'Dodaj nowego pracownika',
+            'edit_item' => 'Edytuj pracownika',
+            'all_items' => 'Wszyscy pracownicy',
+            'singular_name' => 'Pracownik',
+        ),
+        'menu_icon' => 'dashicons-universal-access-alt'
     ) );
 }
 
