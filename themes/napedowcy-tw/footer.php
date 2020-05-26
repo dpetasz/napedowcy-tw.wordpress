@@ -6,15 +6,17 @@
             </div>
             <div class="site-footer__nav site-footer__order">
                 <ul>
-                    <li <?php if(is_front_page()) echo 'class="site-footer--current"' ?> ><a href="<?php echo site_url(  ) ?>">Home</a></li>
-                    <li <?php if(is_page('about-us')) echo 'class="site-footer--current"' ?> >
+                    <li <?php if(is_front_page()) echo 'class="site-footer--current"' ?>><a
+                            href="<?php echo site_url(  ) ?>">Home</a></li>
+                    <li <?php if(is_page('about-us')) echo 'class="site-footer--current"' ?>>
                         <a href="<?php echo site_url( '/about-us' ) ?>">O nas</a>
                     </li>
-                    <li <?php if(is_page('performances')) echo 'class="site-footer--current"' ?> >
-                    <a href="<?php echo site_url( '/performances' ) ?>" >Przedstawienia</a>
+                    <li
+                        <?php if(is_page('performances') or get_post_type()=='performance') echo 'class="site-footer--current"' ?>>
+                        <a href="<?php echo site_url( '/performances' ) ?>">Przedstawienia</a>
                     </li>
-                    <li <?php if(is_page('devices')) echo 'class="site-footer--current"' ?> >
-                    <a href="<?php echo site_url( '/devices' ) ?>" >Urządzenia</a>
+                    <li <?php if(is_page('devices')or get_post_type()=='device') echo 'class="site-footer--current"' ?>>
+                        <a href="<?php echo site_url( '/devices' ) ?>">Urządzenia</a>
                     </li>
                 </ul>
             </div>

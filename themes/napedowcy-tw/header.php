@@ -4,8 +4,8 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ) ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-   
+
+
     <?php wp_head(); ?>
 </head>
 
@@ -20,17 +20,21 @@
             </div>
             <div class="site-header__menu-content">
                 <div class="primary-nav">
-                
+
                     <ul>
-                        <li <?php if(is_front_page()) echo 'class="primary-nav--current"' ?> ><a href="<?php echo site_url( ) ?>">Home</a></li>
-                        <li <?php if(is_page( 'about-us' ) or wp_get_post_parent_id(0) == 6) echo 'class="primary-nav--current"' ?> >
-                            <a href="<?php echo site_url( '/about-us' ) ?>" >O nas</a>
+                        <li <?php if(is_front_page()) echo 'class="primary-nav--current"' ?>><a
+                                href="<?php echo site_url( ) ?>">Home</a></li>
+                        <li
+                            <?php if(is_page( 'about-us' ) or wp_get_post_parent_id(0) == 6) echo 'class="primary-nav--current"' ?>>
+                            <a href="<?php echo site_url( '/about-us' ) ?>">O nas</a>
                         </li>
-                        <li <?php if(is_page('performances') or wp_get_post_parent_id(0) == 8)   echo 'class="primary-nav--current"' ?>>
-                            <a href="<?php echo site_url( '/performances' ) ?>" >Przedstawienia</a>
+                        <li
+                            <?php if(is_page('performances') or get_post_type()=='performance')   echo 'class="primary-nav--current"' ?>>
+                            <a href="<?php echo site_url( '/performances' ) ?>">Przedstawienia</a>
                         </li>
-                        <li <?php if(is_page('devices') or wp_get_post_parent_id(0) == 24) echo 'class="primary-nav--current"' ?>>
-                        <a href="<?php echo site_url( '/devices' ) ?>" >Urządzenia</a>
+                        <li
+                            <?php if(is_page('devices') or  get_post_type()=='device') echo 'class="primary-nav--current"' ?>>
+                            <a href="<?php echo site_url( '/devices' ) ?>">Urządzenia</a>
                         </li>
                     </ul>
                 </div>
