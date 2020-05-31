@@ -4,6 +4,9 @@ import RevealOnScroll from "./modules/RevealOnScroll";
 import StickyHeader from "./modules/StickyHeader";
 // import Slider from "./modules/Slider";
 import SliderOnScroll from "./modules/SliderOnScroll";
+import Performance from './modules/Performance';
+
+let performance = new Performance();
 
 // let slider = new Slider();
 let sliderOnScroll = new SliderOnScroll(90);

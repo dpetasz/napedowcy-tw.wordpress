@@ -10,6 +10,7 @@
     padding: 15px 0;
     color: $mainWhite;
     letter-spacing: 1px;
+    cursor: pointer;
   }
   li {
     list-style: none;
