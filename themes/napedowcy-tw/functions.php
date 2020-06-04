@@ -57,7 +57,7 @@ function pageBanner($args = NULL)
             $args['director'] = get_field('director');
         }
         if (!$args['premiere_date']) {
-            $args['premiere_date'] = get_field('premiere_date');
+            $args['premiere_date'] = new DateTime(get_field('premiere_date')) ;
         }
     ?>
 
@@ -75,7 +75,7 @@ function pageBanner($args = NULL)
                 <p class="page-banner__description-performance ">
                     <strong></strong> <br />
                     Reżyser: <strong><?php echo $args['director']; ?></strong> <br />
-                    Premiera: <strong><?php echo $args['premiere_date']; ?></strong>
+                    Premiera: <strong><?php echo $args['premiere_date']->format('d.m.Y').' r.'; ?></strong>
                 </p>
             </div>
         </div>
@@ -183,3 +183,10 @@ function napedowcy_features()
     add_image_size('testimonial', 160, 160, true);
 }
 add_action('after_setup_theme', 'napedowcy_features');
+
+// function napedowcy_adjust_queries($query){
+//     if(!is_admin() AND is_page('performances') AND $query->is_main_query()){
+//         $query->set('posts_per_page', '1');
+//     }
+// }
+// add_action( 'pre_get_posts', 'napedowcy_adjust_queries' );
