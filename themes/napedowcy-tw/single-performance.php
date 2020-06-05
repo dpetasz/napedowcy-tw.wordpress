@@ -27,22 +27,7 @@ while (have_posts()) {
                 </h2>
                 <p><?php the_title() ?></p>
             </div>
-            <?php if(!in_category(16)){?>
-            <div class="site-performance__links-content">
-                <div class="page-links">
-                    <h2>
-                        <?php the_title() ?>
-                    </h2>
-                    <ul>
-                        <li class="" data-btnBefore>
-                            <a> Przed przedstawieniem</a>
-                        </li>
-                        <li class="page-links--current" data-btnAtThe>
-                            <a> Na przedstawieniu</a>
-                        </li>
-                    </ul>
-                </div>
-            </div> <?php }?>
+
             <?php echo get_template_part('template-parts/performance', 'before');
             echo get_template_part('template-parts/performance', 'atThe');
              ?>

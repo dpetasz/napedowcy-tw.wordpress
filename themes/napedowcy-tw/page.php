@@ -7,10 +7,11 @@ while (have_posts()) {
     pageBanner();
 ?>
 <div class="subpage-section"
-    style="background-image: url(<?php echo get_theme_file_uri('/dist/assets/images/kurtyna--small.jpg') ?>);">
+    style="background-image: url(<?php if(get_field('default_img_main')) echo get_field('default_img_main')['url']; else echo get_theme_file_uri('/dist/assets/images/kurtyna--small.jpg'); ?>);">
     <div class="subpage-section__container wrapper">
         <div class="subpage-section__main-content">
             <div class="subpage-section__links-content">
+
                 <?php
                     $testArray = get_pages(array(
                         'child_of' => get_the_ID()
