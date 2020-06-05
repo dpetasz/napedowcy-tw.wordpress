@@ -117,7 +117,7 @@
     justify-content: center;
     z-index: 10;
     @mixin atLarge {
-      width:40%;
+      width:30%;
       position: static;
       justify-content: flex-start;
     }
@@ -130,13 +130,14 @@
       transition: 0.5s ease-in-out;
 
       @mixin atLarge {
+        width: 70%;
         background-color: rgba($mainDark, 1);
       }
     }
     &--small {
       img {
         @mixin atLarge {
-          width: 40%;
+          width: 50%;
           padding: 5px 0;
           background-color: rgba($mainDark, 0);
         }

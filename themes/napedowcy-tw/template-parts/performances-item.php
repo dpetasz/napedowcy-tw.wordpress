@@ -7,7 +7,7 @@
     <div class="article__text-content">
         <h3><a href="<?php echo get_the_permalink() ?>"><?php the_title() ?></a></h3>
         <p>
-            <?php echo wp_trim_words(get_the_content(), 25) ?>
+            <?php if(is_page( 'archival-performances' )) echo wp_trim_words(get_the_content(), 35); else echo wp_trim_words(get_the_content(), 25); ?>
         </p>
     </div>
 </div>

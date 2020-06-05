@@ -16,7 +16,7 @@ wp_reset_postdata();
     <div class="main-section__container wrapper">
         <div class="main-section__article main-section--border">
             <div class="main-section__title">
-                <h2>ostatnie przedstawienia</h2>
+                <h2><?php the_field('title_performance') ?></h2>
             </div>
             <?php
 
@@ -47,35 +47,22 @@ wp_reset_postdata();
 
             ?>
             <div class="main-section__btn">
-                <a href="<?php echo site_url('/blog') ?>" class="btn">wszystkie przedstawienia</a>
+                <a href="<?php echo site_url('/performances') ?>"
+                    class="btn"><?php the_field('button_performance') ?></a>
             </div>
         </div>
         <div class="main-section__article">
             <div class="main-section__title">
-                <h2>nasze urządzenia</h2>
+                <h2><?php the_field('title_device') ?></h2>
             </div>
             <?php
             while ($homepagePostsDevices->have_posts()) {
-                $homepagePostsDevices->the_post(); ?>
-
-            <div class="article">
-                <div class="article__circle">
-                    <p class="article__acronym"><?php echo get_the_excerpt() ?></p>
-                </div>
-                <div class="article__text-content">
-                    <h3><a href="<?php echo get_the_permalink() ?>"><?php the_title(); ?></a></h3>
-                    <p>
-                        <?php echo wp_trim_words(get_the_content(), 25)  ?>
-                    </p>
-                </div>
-            </div>
-
-            <?php
-            }
-            ?>
+                $homepagePostsDevices->the_post(); 
+                echo get_template_part('template-parts/device', 'item'); 
+                } wp_reset_postdata(); ?>
 
             <div class="main-section__btn">
-                <a href="devices.html" class="btn">wszystkie urządzenia</a>
+                <a href="<?php echo site_url('/devices') ?>" class="btn"><?php the_field('button_device') ?></a>
             </div>
         </div>
     </div>

@@ -176,17 +176,10 @@ add_action('after_setup_theme', 'napedowcy_title_tag');
 
 function napedowcy_features()
 {
-
+    // register_nav_menu( 'headerMenuLocation', 'Header Menu Location' );
     add_image_size('banner_home_page', 1920, 970, true);
     add_image_size('slider_home_page', 1920, 650, true);
     add_image_size('banner', 1920, 400, true);
     add_image_size('testimonial', 160, 160, true);
 }
 add_action('after_setup_theme', 'napedowcy_features');
-
-// function napedowcy_adjust_queries($query){
-//     if(!is_admin() AND is_page('performances') AND $query->is_main_query()){
-//         $query->set('posts_per_page', '1');
-//     }
-// }
-// add_action( 'pre_get_posts', 'napedowcy_adjust_queries' );

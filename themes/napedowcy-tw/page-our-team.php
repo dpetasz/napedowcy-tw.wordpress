@@ -31,11 +31,8 @@ while (have_posts()) {
                     <ul>
 
                         <?php
-                                if ($theParent) {
-                                    $findChildrenOf = $theParent;
-                                } else {
-                                    $findChildrenOf = get_the_ID();
-                                }
+                                if ($theParent) $findChildrenOf = $theParent;
+                                else  $findChildrenOf = get_the_ID();
                                 wp_list_pages(array(
                                     'title_li' => NULL,
                                     'child_of' => $findChildrenOf,

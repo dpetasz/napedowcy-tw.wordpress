@@ -2,14 +2,19 @@
     width: 100%;
     margin-top: 20px;
     left: 0;
+    padding-left: 10px;
+    @mixin atSmall {
+        padding-left: 40px;
+    }
+    @mixin atMedium {
+        padding-left: 20px;
+    }
   .page-numbers{
       padding: 3px 6px;
       color: $mainWhite;
       font-size: 1rem !important;
       @mixin atMedium {
-        
           font-size: 1.2rem !important;
-       
       }
       &:hover{
           background-color: $mainOrange !important;

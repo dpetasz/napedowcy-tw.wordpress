@@ -8,6 +8,7 @@ while (have_posts()) {
 ?>
 <div class="main-section" style="background-image: url(<?php echo get_field('default_img_main')['url'] ?>);">
     <div class="main-section__container wrapper">
+
         <div class="main-section__article main-section--border">
             <div class="main-section__title">
                 <h2>Opera</h2>

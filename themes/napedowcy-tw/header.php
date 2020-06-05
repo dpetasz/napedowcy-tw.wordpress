@@ -29,12 +29,16 @@
                             <a href="<?php echo site_url( '/about-us' ) ?>">O nas</a>
                         </li>
                         <li
-                            <?php if(is_page('performances') or get_post_type()=='performance')   echo 'class="primary-nav--current"' ?>>
+                            <?php if((is_page('performances') or get_post_type()=='performance') and !in_category(16) )   echo 'class="primary-nav--current"' ?>>
                             <a href="<?php echo site_url( '/performances' ) ?>">Przedstawienia</a>
                         </li>
                         <li
                             <?php if(is_page('devices') or  get_post_type()=='device') echo 'class="primary-nav--current"' ?>>
                             <a href="<?php echo site_url( '/devices' ) ?>">Urządzenia</a>
+                        </li>
+                        <li
+                            <?php if(is_page('archival-performances') or  in_category(16))  echo 'class="primary-nav--current"' ?>>
+                            <a href="<?php echo site_url( '/archival-performances' ) ?>">Archiwum</a>
                         </li>
                     </ul>
                 </div>
