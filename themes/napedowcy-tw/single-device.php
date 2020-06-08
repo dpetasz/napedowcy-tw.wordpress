@@ -2,52 +2,39 @@
 
 while (have_posts()) {
   the_post();
-  pageBanner(array('device-page' => true));
+  pageBanner(array(
+    'device-page' => true,
+    'photo' => get_field('device_banner_background_image')['sizes']['banner'],
+    'title' => get_field('device_name')
+  ));
   $theParent = wp_get_post_parent_id(get_the_ID());
 ?>
 
 
 
 
-  <div class="subpage-section" style="background-image: url(<?php echo get_theme_file_uri('/assets/images/kurtyna--small.jpg') ?>);">
-    <div class="subpage-section__container wrapper">
-      <div class="subpage-section__main-content">
+<div class="site-performance"
+    style="background-image: url(<?php echo get_theme_file_uri('/dist/assets/images/kurtyna--small.jpg') ?>);">
 
-        <div class="subpage-section__links-content">
-          <?php
-          $testArray = get_pages(array(
-            'child_of' => get_the_ID()
-          ));
+    <div class="site-performance__container wrapper">
+        <div class="site-performance__main-content">
+            <div class="site-performance__top-content">
+                <h2>
 
-          if ($theParent or $testArray) { ?>
-            <div class="page-links">
-              <h2 class="page-links__title">
-                <a href="<?php echo get_permalink($theParent) ?>"><?php echo get_the_title($theParent); ?></a>
-              </h2>
-              <ul>
+                    <a href="<?php  echo site_url( '/devices') ?>">Urządzenia</a>
 
-                <?php
-                if ($theParent) {
-                  $findChildrenOf = $theParent;
-                } else {
-                  $findChildrenOf = get_the_ID();
-                }
-                wp_list_pages(array(
-                  'title_li' => NULL,
-                  'child_of' => $findChildrenOf,
-                  'sort_column' => 'menu_order'
-                ));
-                ?>
-              </ul>
+
+                </h2>
+                <p><?php the_title() ?></p>
             </div>
-          <?php } ?>
+
+            <div class="site-performance__text-content" data-performanceAtThe>
+                <?php the_content();
+                wp_link_pages(); ?>
+            </div>
         </div>
-        <div class="subpage-section__text-content">
-          <?php the_content() ?>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
 
 
 

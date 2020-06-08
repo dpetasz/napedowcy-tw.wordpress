@@ -12,7 +12,9 @@ function pageBanner($args = NULL)
         if (get_field('banner_background_image')) {
             if ($args['home-page']) $args['photo'] = get_field('banner_background_image')['sizes']['banner_home_page'];
             else $args['photo'] = get_field('banner_background_image')['sizes']['banner'];
-        } else {
+        } 
+        
+        else {
             $args['photo'] = get_field('default_img_banner')['sizes']['banner'];
         }
     }
@@ -133,7 +135,8 @@ function pageSlider($args = NULL)
         if (get_field('banner_background_image')) {
             if ($args['home-page']) $args['photo'] = get_field('banner_background_image')['sizes']['slider_home_page'];
             else $args['photo'] = get_field('banner_background_image')['sizes']['slider_home_page'];
-        } else {
+        } 
+        else {
             $args['photo'] = get_theme_file_uri('/dist/assets/images/stage--high.jpg');
         }
     }

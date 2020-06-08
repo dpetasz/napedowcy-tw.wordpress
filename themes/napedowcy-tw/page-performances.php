@@ -3,10 +3,10 @@
 while (have_posts()) {
     the_post();
     pageBanner(array(
-        'photo'=> get_field('default_img_banner')['sizes']['banner']));
+        'photo'=> get_field('performances_banner_image')['sizes']['banner']));
        
 ?>
-<div class="main-section" style="background-image: url(<?php echo get_field('default_img_main')['url'] ?>);">
+<div class="main-section" style="background-image: url(<?php echo get_field('main_img')['url'] ?>);">
     <div class="main-section__container wrapper">
 
         <div class="main-section__article main-section--border">

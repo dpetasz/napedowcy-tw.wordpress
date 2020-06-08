@@ -4,7 +4,8 @@ while (have_posts()) {
   the_post();
   pageBanner(array(
     'performance-page' => true,
-    'title'=> get_the_title()
+    'title'=> get_the_title(),
+    'photo' => get_field('performance_banner_background_image')['sizes']['banner']
   ));
   $theParent = wp_get_post_parent_id(get_the_ID());
 ?>
