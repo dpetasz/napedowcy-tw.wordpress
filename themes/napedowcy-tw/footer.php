@@ -39,6 +39,22 @@
         </div>
     </div>
 </section>
+
+<div class='search' data-searchOverlay>
+    <div class="search__top">
+        <div class="search__container wrapper">
+            <i class="fa fa-search search__icon" aria-hidden='true'></i>
+            <input type="text" class='search-term' placeholder='Czego szukasz?' id='search-term'>
+            <i class="fa fa-window-close search__close" aria-hidden='true' data-closeSearch></i>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div id="search__results">
+
+        </div>
+    </div>
+</div>
+
 <?php wp_footer(); ?>
 </body>
 

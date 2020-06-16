@@ -31,3 +31,6 @@ a {
   text-decoration: none;
   color: $mainWhite;
 }
+.body-no-scroll {
+  overflow: hidden;
+}

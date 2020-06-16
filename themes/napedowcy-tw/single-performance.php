@@ -20,6 +20,7 @@ while (have_posts()) {
         <div class="site-performance__main-content">
             <div class="site-performance__top-content">
                 <h2>
+
                     <?php if(!in_category(16)){?>
                     <a href="<?php  echo site_url( '/performances') ?>">Przedstawienia</a>
                     <?php } else {?>

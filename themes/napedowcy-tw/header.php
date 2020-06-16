@@ -30,21 +30,27 @@
                         </li>
                         <li
                             <?php if((is_page('performances') or get_post_type()=='performance') and !in_category(16) )   echo 'class="primary-nav--current"' ?>>
-                            <a href="<?php echo site_url( '/performances' ) ?>">Przedstawienia</a>
+                            <a href="<?php echo site_url( '/performances') ?>">Przedstawienia</a>
                         </li>
                         <li
                             <?php if(is_page('devices') or  get_post_type()=='device') echo 'class="primary-nav--current"' ?>>
-                            <a href="<?php echo site_url( '/devices' ) ?>">Urządzenia</a>
+                            <a href="<?php echo  site_url( '/devices') ?>">Urządzenia</a>
                         </li>
                         <li
                             <?php if(is_page('archival-performances') or  in_category(16))  echo 'class="primary-nav--current"' ?>>
                             <a href="<?php echo site_url( '/archival-performances' ) ?>">Archiwum</a>
                         </li>
+
                     </ul>
                 </div>
                 <div class="site-header__btn-container">
                     <a href="#" class="btn btn--small">zaloguj</a>
                 </div>
+                <div class='site-header__search'>
+                    <a href="<?php echo site_url( '/#' ) ?>"><i class="fa fa-search" data-openSearch></i>
+                    </a>
+                </div>
+
             </div>
         </div>
     </section>

@@ -172,4 +172,32 @@
       z-index: 10;
     }
   }
+  &__search{
+    margin-top: 20px;
+    padding: 5px;
+    border: solid 1px $mainWhite;
+    width: 100%;
+    text-align: right;
+    .fa-search{
+      font-size: 1.4rem;
+      line-height: 1.4rem;
+      border-left: solid 1px $mainWhite;
+      height: 30px;
+      width: 30px;
+      color: $mainWhite;
+      &:hover{
+        color: $mainOrange;
+      }
+    }
+    @mixin atLarge {
+      width: auto;
+      margin-top: 0;
+      margin-left: 20px;
+      padding: 0;
+      border: none;
+      .fa-search{
+        border-left: none;
+      }
+    }
+  }
 }

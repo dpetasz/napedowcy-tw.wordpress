@@ -1,7 +1,6 @@
 <?php get_header();
 
-while (have_posts()) {
-    the_post();
+
     pageBanner();
     $homepagePostsDevices = new WP_Query(array(
         'paged'=> get_query_var( 'paged', 1 ),
@@ -33,6 +32,6 @@ while (have_posts()) {
 
 
 
-<?php }
+<?php
 
 get_footer(); ?>

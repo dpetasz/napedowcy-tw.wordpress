@@ -12,32 +12,7 @@ while (have_posts()) {
         <div class="subpage-section__main-content">
             <div class="subpage-section__links-content">
 
-                <?php
-                    $testArray = get_pages(array(
-                        'child_of' => get_the_ID()
-                    ));
-
-                    if ($theParent or $testArray) { ?>
-                <div class="page-links">
-                    <h2 class="page-links__title">
-                        <a href="<?php echo get_permalink($theParent) ?>"><?php echo get_the_title($theParent); ?></a>
-                    </h2>
-                    <ul>
-                        <?php
-                          if ($theParent) {
-                            $findChildrenOf = $theParent;
-                          } else {
-                          $findChildrenOf = get_the_ID();
-                          }
-                          wp_list_pages(array(
-                            'title_li' => NULL,
-                            'child_of' => $findChildrenOf,
-                            'sort_column' => 'menu_order'
-                          ));
-                          ?>
-                    </ul>
-                </div>
-                <?php } ?>
+                Strona
             </div>
             <div class="subpage-section__text-content">
                 <?php the_content() ?>
