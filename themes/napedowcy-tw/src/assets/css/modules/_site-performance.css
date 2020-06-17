@@ -3,24 +3,7 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
   z-index: 2;
-  .post-nav-links{
-    padding: 5px 0;
-    text-indent: 0;
-    font-size: 1rem;
-    a{
-      padding: 3px 5px;
-       color: $mainDark;
-       &:hover{
-         background-color: $mainOrange;
-         color: $mainWhite;
-       }
-    }
-   span{
-    padding: 3px 5px;
-     background-color: $mainOrange;
-     color: $mainWhite;
-   }
-  }
+  
   @mixin atLarge {
     padding: 60px 20px;
   }
@@ -29,7 +12,7 @@
     flex-direction: column;
     background-color: $mainWhite;
     align-items: center;
-    padding: 40px 10px;
+    padding: 60px 10px;
     @mixin atSmall {
       max-width: 640px;
     }
@@ -42,7 +25,7 @@
       margin: 0 auto;
       max-width: 1200px;
 
-      padding: 60px 10px;
+      padding: 100px 10px;
     }
   }
   &__main-content {
@@ -68,7 +51,7 @@
     transform: translateX(-50%);
     background-color: $mainOrangeDark;
     box-shadow: 10px 8px 8px -1px rgba($mainDark, 0.87);
-    margin-top: -82px;
+    margin-top: -102px;
     text-align: center;
     p {
       padding: 10px 20px;
@@ -113,7 +96,7 @@
     }
     @mixin atLarge {
       flex-direction: row;
-      margin-top: -90px;
+      margin-top: -130px;
       
       p {
         padding: 15px 40px;
@@ -165,7 +148,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px 0 20px 0;
     div {
       width: 60%;
     }
@@ -230,42 +212,45 @@
     }
   }
   &__text-content {
-    margin-top: 40px;
-    h1, h2, h3, h3, h4, h5, h6 {
-      margin: 30px 0;
+    h3 {
+      margin: 40px 0;
       font-size: 1.4rem;
+      text-align: center;
       font-weight: 400;
     }
-    h1, h2 {
-      font-size: 1.8rem;
-    }
     p {
-      text-indent: 3rem;
       font-size: 1rem;
       text-align: justify;
       line-height: 1.4rem;
     }
-    img{
-      margin: 10px 0;
-    }
     @mixin atMedium {
-      margin-top: 0;
-      h1, h2, h3, h3, h4, h5, h6 {
-        margin: 50px 0;
+      h3 {
         font-size: 1.6rem;
       }
-      h1, h2 {
-        font-size: 2rem;
-      }
       p {
-        margin: 10px 0;
-        text-indent: 4rem;
         font-size: 1.2rem;
         line-height: 1.8rem;
       }
-      img{
-        margin: 30px 0;
+    }
+    .post-nav-links{
+      font-size: 1.2rem;
+      color: $mainDark;
+      margin-top: 20px;
+      .current{
+        color: $mainWhite;
+        background-color: $mainOrange;
+        padding: 0 5px;
       }
+      a{
+        color: $mainDark;
+        padding: 0 5px;
+        &:hover{
+          color: $mainWhite;
+          background-color: $mainOrange;
+        }
+      }
+      
     }
   }
+ 
 }

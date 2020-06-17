@@ -83,6 +83,13 @@
         color: $mainDark;
       }
     }
+    &__fa{
+      margin-left: 10px;
+      .fa-search{
+        font-size: 1.4rem;
+        color: $mainWhite;
+      }
+    }
 }
 @keyframes spin {
     0% {
@@ -94,3 +101,4 @@
               transform: rotate(360deg);
     }
   }
+  
