@@ -1,7 +1,7 @@
 <?php
 function napedowcy_post_types(){
     register_post_type( 'device', array(
-        'map_meta_cap' => true,
+        'show_in_rest' => true,
         'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
         'public'=> true,
         'labels'=> array(
@@ -16,7 +16,7 @@ function napedowcy_post_types(){
     ) );
 
     register_post_type( 'performance', array(
-        'map_meta_cap' => true,
+        'show_in_rest' => true,
         'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
         'public'=> true,
         'labels'=> array(
@@ -42,6 +42,7 @@ function napedowcy_post_types(){
         'menu_icon' => 'dashicons-images-alt'
     ) );
     register_post_type( 'ourTeam', array(
+        'show_in_rest'=> true,
         'map_meta_cap' => true,
         'supports' => array('title', 'thumbnail','editor'),
         'public'=> true,

@@ -45,7 +45,8 @@
                 <div class="site-header__btn-container">
                     <a href="#" class="btn btn--small">zaloguj</a>
                 </div>
-                <div class="search__fa"><i class="fa fa-search" aria-hidden="true"></i></div>
+                <a href="#" class="site-header__search" data-openSearch><i class="fa fa-search"
+                        aria-hidden="true"></i></a>
             </div>
         </div>
     </section>
