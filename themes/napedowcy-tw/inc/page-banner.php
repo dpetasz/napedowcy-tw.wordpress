@@ -50,12 +50,13 @@ function pageBanner($args = NULL)
 </section>
 <?php
         } elseif ($args['performance-page']) {
-
+            $composer = get_field('composer_performance');
+            $director = get_field('director_performance');
             if (!$args['composer']) {
-                $args['composer'] = get_field('composer');
+                $args['composer'] = get_the_title( $composer[0]);
             }
             if (!$args['director']) {
-                $args['director'] = get_field('director');
+                $args['director'] = get_the_title( $director[0]);
             }
             if (!$args['premiere_date']) {
                 $args['premiere_date'] = new DateTime(get_field('premiere_date')) ;

@@ -7,7 +7,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba($mainWhite, .95) ;
+    background-color: rgba($mainDark, .95) ;
+    color: $mainWhite;
     visibility: hidden;
     opacity: 0;
     -webkit-transform: scale(1.09);
@@ -49,7 +50,7 @@
     padding-top: 40px;
   }
   &__top{
-    background-color: rgba($mainDark, .12);
+    background-color: rgba($mainDark, .8);
   }
   &__close{
     font-size: 2.1rem;
@@ -70,17 +71,18 @@
             animation: spin 1s infinite linear;
   }
   &__section-title{
+    margin: 20px 0;
     font-weight: 400;
-    color: $mainDark;
+    color: $mainWhite;
     font-size: 2rem;
     padding: 15px 0;
-    border-bottom: 1px solid rgba($mainDark, .12);
+    border-bottom: 1px solid rgba($mainWhite, .12);
    
   } 
   ul {
       margin-top: 20px;
       a{
-        color: $mainDark;
+        color: $mainWhite;
       }
     }
     &__fa{

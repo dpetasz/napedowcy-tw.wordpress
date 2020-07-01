@@ -27,6 +27,8 @@ while (have_posts()) {
                     <?php } ?>
                 </h2>
                 <p><?php the_title() ?></p>
+                <p><?php the_field('type_of_performance') ?></p>
+                <?php if(get_field('archive')){?><p> Przedstawienie archiwalne </p><?php }  ?>
             </div>
 
             <?php echo get_template_part('template-parts/performance', 'before');
