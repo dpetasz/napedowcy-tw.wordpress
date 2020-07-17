@@ -29,8 +29,11 @@ while (have_posts()) {
             </div>
 
             <div class="site-performance__text-content" data-performanceAtThe>
-                <?php the_content();
-                wp_link_pages(); ?>
+                <?php if(is_user_logged_in()){ the_content();
+                wp_link_pages(); 
+                } else {
+                    echo get_template_part('template-parts/userNotLogged');
+                }?>
             </div>
         </div>
     </div>

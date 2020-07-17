@@ -1,0 +1,49 @@
+.login {
+  background-color: $mainDark;
+
+  .button-primary {
+    background-color: $mainOrange;
+    border-color: color($mainOrange b(+10%));
+    text-shadow: 0 -1px 1px color($mainOrange b(+15%)),
+      1px 0 1px color($mainOrange b(+15%)), 0 1px 1px color($mainOrange b(+15%)),
+      -1px 0 1px color($mainOrange b(+15%));
+    box-shadow: 0 1px 0 color($mainOrange b(+20%));
+    &:hover,
+    :active,
+    :focus {
+      background-color: color($mainOrange b(+7%));
+      border-color: color($mainOrange b(+15%));
+      text-shadow: 0 -1px 1px color($mainOrange b(+20%)),
+        1px 0 1px color($mainOrange b(+20%)),
+        0 1px 1px color($mainOrange b(+20%)),
+        -1px 0 1px color($mainOrange b(+20%));
+      box-shadow: 0 1px 0 color($mainOrange b(+25%));
+    }
+  }
+  h1 a {
+    color: $mainWhite;
+    font-size: 30px;
+    font-weight: 300;
+    background-image: none;
+    width: auto;
+    height: auto;
+    text-indent: 0;
+    text-transform: uppercase;
+    &:hover {
+      color: $mainOrange;
+    }
+  }
+  #nav a,
+  #backtoblog a {
+    color: $mainWhite;
+    &:hover {
+      color: $mainOrange;
+    }
+  }
+  form {
+    background-color: color($mainWhite);
+  }
+  .dashicons {
+    color: $mainOrange;
+  }
+}

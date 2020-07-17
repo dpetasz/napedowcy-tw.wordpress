@@ -43,7 +43,11 @@
                     </ul>
                 </div>
                 <div class="site-header__btn-container">
-                    <a href="#" class="btn btn--small">zaloguj</a>
+                <?php if(is_user_logged_in()){ ?>
+                    <a href="<?php echo wp_logout_url() ?>" class="btn btn--small">Wyloguj</a>
+                <?php } else { ?>
+                    <a href="<?php echo wp_login_url() ?>" class="btn btn--small">Zaloguj</a> 
+                <?php } ?>
                 </div>
                 <a href="#" class="site-header__search" data-openSearch><i class="fa fa-search"
                         aria-hidden="true"></i></a>

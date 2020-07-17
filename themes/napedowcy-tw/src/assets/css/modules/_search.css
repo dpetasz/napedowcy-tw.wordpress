@@ -1,35 +1,36 @@
-.search{
-    overflow-y: auto;
-    overflow-x: hidden;
-    z-index: 110;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba($mainDark, .95) ;
-    color: $mainWhite;
-    visibility: hidden;
-    opacity: 0;
-    -webkit-transform: scale(1.09);
-            transform: scale(1.09);
-    transition: opacity .3s, visibility .3s, -webkit-transform .3s;
-    transition: opacity .3s, transform .3s, visibility .3s;
-    transition: opacity .3s, transform .3s, visibility .3s, -webkit-transform .3s;
-    box-sizing: border-box;
-  &--active{
+.search {
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 110;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($mainDark, 0.95);
+  color: $mainWhite;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: scale(1.09);
+  transform: scale(1.09);
+  transition: opacity 0.3s, visibility 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+  transition: opacity 0.3s, transform 0.3s, visibility 0.3s,
+    -webkit-transform 0.3s;
+  box-sizing: border-box;
+  &--active {
     visibility: visible;
     opacity: 1;
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
-  &__container{
+  &__container {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  &-term{
+  &-term {
     flex-grow: 1;
     box-sizing: border-box;
     border: none;
@@ -41,24 +42,23 @@
     outline: none;
     color: $mainOrange;
   }
-  &__icon{
-    
+  &__icon {
     font-size: 2rem;
     color: $mainOrange;
   }
   p {
     padding-top: 40px;
   }
-  &__top{
-    background-color: rgba($mainDark, .8);
+  &__top {
+    background-color: rgba($mainDark, 0.8);
   }
-  &__close{
+  &__close {
     font-size: 2.1rem;
     cursor: pointer;
-    transition: all .3s;
+    transition: all 0.3s;
     background-color: $mainWhite;
     color: $mainOrange;
-    line-height: .7;
+    line-height: 0.7;
   }
   &__spinner-loader {
     margin-top: 45px;
@@ -68,39 +68,37 @@
     border: 0.25rem solid rgba(0, 0, 0, 0.2);
     border-top-color: black;
     -webkit-animation: spin 1s infinite linear;
-            animation: spin 1s infinite linear;
+    animation: spin 1s infinite linear;
   }
-  &__section-title{
+  &__section-title {
     margin: 20px 0;
     font-weight: 400;
     color: $mainWhite;
     font-size: 2rem;
     padding: 15px 0;
-    border-bottom: 1px solid rgba($mainWhite, .12);
-   
-  } 
+    border-bottom: 1px solid rgba($mainWhite, 0.12);
+  }
   ul {
-      margin-top: 20px;
-      a{
-        color: $mainWhite;
-      }
-    }
-    &__fa{
-      margin-left: 10px;
-      .fa-search{
-        font-size: 1.4rem;
-        color: $mainWhite;
-      }
-    }
-}
-@keyframes spin {
-    0% {
-      -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
-    }
-    100% {
-      -webkit-transform: rotate(360deg);
-              transform: rotate(360deg);
+    margin-top: 20px;
+    a {
+      color: $mainWhite;
     }
   }
-  
+  &__fa {
+    margin-left: 10px;
+    .fa-search {
+      font-size: 1.4rem;
+      color: $mainWhite;
+    }
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
