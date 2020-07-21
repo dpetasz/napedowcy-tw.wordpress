@@ -1,9 +1,9 @@
 <?php get_header();
 
-while (have_posts()) {
-    the_post();
     pageBanner(array(
         'photo'=> get_field('performances_banner_image')['sizes']['banner']));
+while (have_posts()) {
+    the_post();
        
 ?>
 <div class="main-section" style="background-image: url(<?php echo get_field('main_img')['url'] ?>);">

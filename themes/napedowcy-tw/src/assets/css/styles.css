@@ -20,5 +20,6 @@
 @import "modules/_page-links";
 @import "modules/_testimonial";
 @import "modules/_site-performance";
-@import 'modules/_pagination';
-@import 'modules/_search';
+@import "modules/_pagination";
+@import "modules/_search";
+@import "modules/_login";

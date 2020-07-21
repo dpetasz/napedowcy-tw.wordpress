@@ -30,9 +30,13 @@ while (have_posts()) {
                 <p><?php the_field('type_of_performance') ?></p>
                 <?php if(get_field('archive')){?><p> Przedstawienie archiwalne </p><?php }  ?>
             </div>
-
-            <?php echo get_template_part('template-parts/performance', 'before');
-            echo get_template_part('template-parts/performance', 'atThe');
+            <?php ?>
+            <?php if(is_user_logged_in()){  
+                echo get_template_part('template-parts/performance', 'before');
+                echo get_template_part('template-parts/performance', 'atThe');
+            } else{
+                echo get_template_part('template-parts/userNotLogged');
+            }
              ?>
         </div>
     </div>
