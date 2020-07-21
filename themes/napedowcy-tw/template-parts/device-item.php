@@ -7,7 +7,7 @@
         <p>
             <?php 
             if(is_front_page()) echo wp_trim_words(get_the_content(), 25);
-            else echo wp_trim_words(get_the_content(), 55);
+            else echo wp_trim_words(get_the_content(), 25);
              ?>
         </p>
     </div>
