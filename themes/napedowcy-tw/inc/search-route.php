@@ -48,7 +48,8 @@ function napedowcyRegisterSearch(){
             'description' => $description,
             'director' => get_field('director'),
             'composer' => get_field('composer'),
-            'type_of_performance' => get_field('type_of_performance')
+            'type_of_performance' => get_field('type_of_performance'),
+            'id' => get_the_ID()
 
         ));
         }
@@ -85,7 +86,7 @@ function napedowcyRegisterSearch(){
                 array(
                     'key' => 'type_of_performance',
                     'compare'=> 'LIKE',
-                    'value' => 'balet'
+                    'value' => '"'.$results[0]['id'].'"'
                 )
             )
         ));
