@@ -85,6 +85,7 @@ function pageBanner($args = NULL)
 </section>
 <?php
         } elseif ($args['device-page']) {
+            
         ?>
 
 <section class="page-banner">
@@ -95,7 +96,9 @@ function pageBanner($args = NULL)
                 <h3 class="page-banner__title page-banner__title-subpage">
                     <?php echo $args['title']; ?>
                 </h3>
-
+                <p class="page-banner__subtitle-subpage ">
+                   Urządzenia  <?php echo $args['subtitle']; ?>
+                </p>
             </div>
         </div>
     </div>

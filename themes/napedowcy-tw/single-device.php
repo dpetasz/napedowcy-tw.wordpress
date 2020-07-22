@@ -5,6 +5,7 @@ while (have_posts()) {
   pageBanner(array(
     'device-page' => true,
     'photo' => get_field('device_banner_background_image')['sizes']['banner'],
+    'subtitle'=> get_field('type_of_devices'),
     'title' => get_field('device_name')
   ));
   $theParent = wp_get_post_parent_id(get_the_ID());
@@ -26,6 +27,7 @@ while (have_posts()) {
 
                 </h2>
                 <p><?php the_title() ?></p>
+                
             </div>
 
             <div class="site-performance__text-content" data-performanceAtThe>
