@@ -60,7 +60,7 @@ class Search {
                         
                     <div class='search__one-third'>  
                         <h2 clsss='search__section-title'>Przedstawienia</h2>  <h3 class='title'>Aktualne</h3>
-                            ${results.performances.length  ? '<div class="">' : `<p> nic nie znaleźliśmy: <a href='${napedowcyData.root_url}/performances'> Przedstawienia aktualne</a> </p>`}
+                            ${results.performances.length  ? '<div class="search__row">' : `<p> nic nie znaleźliśmy: <a href='${napedowcyData.root_url}/performances'> Przedstawienia aktualne</a> </p>`}
                             ${results.performances.map( item => `
                             
                                 
