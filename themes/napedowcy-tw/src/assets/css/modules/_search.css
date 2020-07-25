@@ -37,27 +37,34 @@
     display: flex;
     align-items: center;
     background-color: rgba($mainWhite, 0.8);
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 0 20px;
+    @mixin atLarge {
+    border-radius: 20px;  
+    }
   }
   &-term {
     flex-grow: 1;
     width: 80%;
     border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
     margin: 7px;
-    font-size: 1.4rem;
+    padding-left: 5px;
+    font-size: 1.2rem;
     font-weight: 300;
     color: $mainOrange;
-    @mixin atLarge {
+    @mixin atMedium {
       margin: 15px;
-      border: none;
+      padding-left: 10px;
       font-size: 2rem;
     }
   }
   &__icon {
     font-size: 1rem;
     color: $mainOrange;
-    @mixin atLarge {
+    @mixin atMedium {
       font-size: 2rem;
     }
   }
@@ -76,7 +83,7 @@
     background-color: $mainOrange;
     color: $mainWhite;
     line-height: 0.7;
-    @mixin atLarge {
+    @mixin atMedium {
       font-size: 2.1rem;
     }
   }
@@ -115,7 +122,7 @@
     .fa-search {
       font-size: 0.5rem;
       color: $mainWhite;
-      @mixin atLarge {
+      @mixin atMedium {
         margin-left: 5px;
         font-size: 1.4rem;
       }
@@ -133,12 +140,19 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-
     text-align: center;
+    @mixin atLarge {
+    width: 30%; 
+    }
     h2 {
       text-transform: uppercase;
       margin-bottom: 20px;
-      letter-spacing: 3px;
+      letter-spacing: 1px;
+      font-size: 1.4rem;
+      font-weight: 300;
+      @mixin atMedium {
+        font-size: 1.8rem;
+      }
     }
     .title {
       border-bottom: 1px solid rgba($mainWhite, 0.8);
@@ -146,35 +160,45 @@
       h3 {
         padding: 10px 0;
         text-transform: uppercase;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         font-weight: 300;
-        color: $mainOrange;
+        color: rgba($mainOrange, .6);
+        text-shadow: 0 0 10px rgba($mainWhite, 0.6);
+        @mixin atMedium {
+          font-size: 1.6rem;
+        }
       }
     }
     &:nth-child(2) {
-      border-top: 1px solid rgba($mainWhite, 0.8);
-      border-bottom: 1px solid rgba($mainWhite, 0.8);
+      border-top: 1px solid rgba($mainOrange, 0.4);
+      border-bottom: 1px solid rgba($mainOrange, 0.4);
       padding: 10px 0;
       @mixin atLarge {
+        width:40%;
+        padding: 0;
         border-top: none;
         border-bottom: none;
-        border-right: 1px solid rgba($mainWhite, 0.8);
-        border-left: 1px solid rgba($mainWhite, 0.8);
+        border-right: 1px solid rgba($mainOrange, 0.4);
+        border-left: 1px solid rgba($mainOrange, 0.4);
       }
     }
   }
   &__article {
-    min-width: 60%;
+    width: 80%;
     margin: 10px 0;
     padding: 10px;
     background-color: rgba($mainWhite, 0.1);
     border-radius: 20px;
+    
     h3 {
-      font-size: 1.1rem;
+      font-size: 1rem;
       margin-bottom: 5px;
       padding-bottom: 5px;
       text-transform: uppercase;
       font-weight: 300;
+      @mixin atMedium { 
+        font-size: 1.4rem;
+      }
       a {
         border-bottom: solid 1px rgba($mainWhite, 0.4);
         padding-bottom: 3px;
@@ -182,17 +206,20 @@
     }
     p {
       padding: 5px 0;
+      font-size: .8rem;
+      font-weight: 200;
+      @mixin atLarge {
+        font-size: 1.2rem;
+      }
     }
   }
   a {
+    color: $mainWhite;
     &:hover {
       color: $mainOrange;
     }
   }
 
-  a {
-    color: $mainWhite;
-  }
 }
 @keyframes spin {
   0% {
