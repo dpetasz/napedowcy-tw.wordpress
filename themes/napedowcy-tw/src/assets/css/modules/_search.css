@@ -7,6 +7,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  padding-bottom: 20px;
   background-color: rgba($mainDark, 0.95);
   color: $mainWhite;
   visibility: hidden;
@@ -18,6 +19,7 @@
   transition: opacity 0.3s, transform 0.3s, visibility 0.3s,
     -webkit-transform 0.3s;
   box-sizing: border-box;
+  
   &--active {
     visibility: visible;
     opacity: 1;
@@ -98,16 +100,10 @@
     animation: spin 1s infinite linear;
   }
 
-  &__section-title {
-    margin: 20px 0;
-    font-weight: 400;
-    color: $mainWhite;
-    font-size: 2rem;
-    padding: 15px 0;
-    border-bottom: 1px solid rgba($mainWhite, 0.12);
-  }
+ 
   ul {
     margin-top: 20px;
+    text-align: center;
     li {
       margin-bottom: 10px;
     }
@@ -133,32 +129,42 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+    @mixin atMedium {
+      width: 80%;
+    }
   }
   &__one-third {
     margin-top: 20px;
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    text-align: center;
+    align-items: center;
+    flex-grow: 1;
     @mixin atLarge {
     width: 30%; 
     }
-    h2 {
-      text-transform: uppercase;
-      margin-bottom: 20px;
-      letter-spacing: 1px;
-      font-size: 1.4rem;
-      font-weight: 300;
-      @mixin atMedium {
-        font-size: 1.8rem;
-      }
+    h2{
+      margin: 20px 0;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: $mainWhite;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba($mainWhite, 0.12);
+    font-size: 1.4rem;
+    font-weight: 300;
+    @mixin atMedium {
+      font-size: 1.8rem;
+    }
+    
     }
     .title {
-      border-bottom: 1px solid rgba($mainWhite, 0.8);
       margin: 0 40px;
       h3 {
         padding: 10px 0;
+        border-bottom: 1px solid rgba($mainOrange, 0.4);
         text-transform: uppercase;
         font-size: 1.2rem;
         font-weight: 300;
@@ -184,9 +190,9 @@
     }
   }
   &__article {
-    width: 80%;
     margin: 10px 0;
     padding: 10px;
+    text-align: center;
     background-color: rgba($mainWhite, 0.1);
     border-radius: 20px;
     
