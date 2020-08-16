@@ -18,9 +18,15 @@ while (have_posts()) {
                     'paged'=> get_query_var( 'paged', 1 ),
                     'posts_per_page' => 10,
                     'post_type' => 'performance',
-                    'cat' => 16,
                     'orderby'=> 'title',
-                    'order'=> 'ASC' 
+                    'order'=> 'ASC',
+                    'meta_query' => array(
+                        array(
+                            'key' => 'archive',
+                            'compare'=> 'LIKE',
+                            'value' => true
+                        )
+                    ) 
                     
                 ));
                 while ($homepagePostsOpera->have_posts()) {

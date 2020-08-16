@@ -23,7 +23,3 @@ new RevealOnScroll(document.querySelectorAll(".site-slider__text-content"), 90);
 if (module.hot) {
   module.hot.accept();
 }
-
-let x = 0
-
-console.log(x)

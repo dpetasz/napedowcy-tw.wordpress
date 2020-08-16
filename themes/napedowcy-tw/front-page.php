@@ -23,9 +23,15 @@ wp_reset_postdata();
             $homepagePostsPerformances = new WP_Query(array(
                 'posts_per_page' => 3,
                 'post_type' => 'performance',
-                'category__not_in' => 16 ,
                 'meta_key'=> 'premiere_date',
-                'orderby'=>'meta_value_num'
+                'orderby'=>'meta_value_num',
+                'meta_query' => array(
+                    array(
+                        'key' => 'archive',
+                        'compare'=> '=',
+                        'value' => false
+                    )
+                )
                 
             ));
 

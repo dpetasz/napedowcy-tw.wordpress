@@ -18,10 +18,21 @@ while (have_posts()) {
                     'paged'=> get_query_var( 'paged', 1 ),
                     'posts_per_page' => 10,
                     'post_type' => 'performance',
-                    'category__not_in' => array(16, 6),
                     'orderby'=> 'title',
-                    'order'=> 'ASC' 
-                    
+                    'order'=> 'ASC', 
+                    'meta_query' => array(
+                        'relation' => 'AND',
+                        array(
+                            'key' => 'type_of_performance',
+                            'compare'=> 'LIKE',
+                            'value' => 'opera'
+                        ),
+                        array(
+                            'key' => 'archive',
+                            'compare'=> '=',
+                            'value' => false
+                        )
+                    )
                 ));
                 while ($homepagePostsOpera->have_posts()) {
                     $homepagePostsOpera->the_post(); 
@@ -49,9 +60,21 @@ while (have_posts()) {
                     'posts_per_page' => 10,
                     'paged'=> get_query_var( 'paged',1),
                     'post_type' => 'performance',
-                    'category__not_in' => array(16, 4),
                     'orderby'=> 'title',
-                    'order'=> 'ASC'  
+                    'order'=> 'ASC',
+                    'meta_query' => array(
+                        'relation' => 'AND',
+                        array(
+                            'key' => 'archive',
+                            'compare'=> '=',
+                            'value' => false
+                        ),
+                        array(
+                            'key' => 'type_of_performance',
+                            'compare'=> 'LIKE',
+                            'value' => 'balet'
+                        ),
+                    )  
                     
                 ));
                 while ($homepagePostsBalet->have_posts()) {

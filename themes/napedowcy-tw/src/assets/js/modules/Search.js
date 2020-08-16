@@ -72,34 +72,26 @@ class Search {
                         <h2 clsss='search__section-title'>Przedstawienia</h2>  
                         <div class='title'><h3>Aktualne</h3></div>
                         
-                            ${
-                              results.performances.length
+                            ${results.performances.length
                                 ? '<div class="search__row">'
                                 : `<p> nic nie znaleźliśmy: <a href='${napedowcyData.root_url}/performances'> Przedstawienia aktualne</a> </p>`
                             }
                             ${results.performances
                               .map(
                                 (item) => `
-                            
-                                
                                 <div class="search__article">
                                     <h3><a href="${item.permalink}">${item.title} </a></h3>
                                     <p>data premiery: ${item.premiere_day_month}.${item.premiere_year}</p>
-                                    <p>Kompozytor: ${item.composer}</p>
-                                    <p>data premiery: ${item.director}</p>
-                                </div>
+                                    <p>Kompozytor: ${item.composers[0]['post_title']}</p>
+                                    <p>Reżyser: ${item.directors[0]['post_title']}</p>
                                     
-                                
-                            
-                            `
-                              )
-                              .join("")}
+                                </div>`).join("")}
                             ${results.performances.length ? "</div>" : ""}
                     
                             <div class='title'><h3>Archiwalne</h3></div>
                             ${
                               results.performances_archival.length
-                                ? '<div class="">'
+                                ? '<div class="search__row">'
                                 : `<p> Nic nie znaleźliśmy: <a href='${napedowcyData.root_url}/archival-performances'> Przedstawienia archiwalne</a> </p>`
                             }
                             ${results.performances_archival
@@ -109,8 +101,9 @@ class Search {
                                 <div class="search__article">
                                     <h3><a href="${item.permalink}">${item.title} </a></h3>
                                     <p>data premiery: ${item.premiere_day_month}.${item.premiere_year}</p>
-                                    <p>Kompozytor: ${item.composer}</p>
-                                    <p>Reżyser: ${item.director}</p>
+                                    <p>Kompozytor: ${item.composers[0]['post_title']}</p>
+                                    <p>Reżyser: ${item.directors[0]['post_title']}</p>
+                                    
                                 </div>
                             `
                               )

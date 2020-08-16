@@ -29,7 +29,7 @@
                             <a href="<?php echo site_url( '/about-us' ) ?>">O nas</a>
                         </li>
                         <li
-                            <?php if((is_page('performances') or get_post_type()=='performance') and !in_category(16) )   echo 'class="primary-nav--current"' ?>>
+                            <?php if((is_page('performances') or get_post_type()=='performance') and !get_field('archive'))   echo 'class="primary-nav--current"' ?>>
                             <a href="<?php echo site_url( '/performances' ) ?>">Przedstawienia</a>
                         </li>
                         <li
@@ -37,17 +37,17 @@
                             <a href="<?php echo site_url( '/devices' ) ?>">Urządzenia</a>
                         </li>
                         <li
-                            <?php if(is_page('archival-performances') or  in_category(16))  echo 'class="primary-nav--current"' ?>>
+                            <?php if(is_page('archival-performances') or  get_field('archive'))  echo 'class="primary-nav--current"' ?>>
                             <a href="<?php echo site_url( '/archival-performances' ) ?>">Archiwum</a>
                         </li>
                     </ul>
                 </div>
                 <div class="site-header__btn-container">
-                <?php if(is_user_logged_in()){ ?>
+                    <?php if(is_user_logged_in()){ ?>
                     <a href="<?php echo wp_logout_url() ?>" class="btn btn--small">Wyloguj</a>
-                <?php } else { ?>
-                    <a href="<?php echo wp_login_url() ?>" class="btn btn--small">Zaloguj</a> 
-                <?php } ?>
+                    <?php } else { ?>
+                    <a href="<?php echo wp_login_url() ?>" class="btn btn--small">Zaloguj</a>
+                    <?php } ?>
                 </div>
                 <a href="#" class="site-header__search" data-openSearch><i class="fa fa-search"
                         aria-hidden="true"></i></a>
